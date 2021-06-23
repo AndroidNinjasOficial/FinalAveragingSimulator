@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_24dp"
+    tools:context=".ui.fragment.ResultadoMediaFragment">
+
+    <TextView
+        android:id="@+id/warning_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_approved_warning_result_fragment_resultado_media"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/holo_green_dark"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textSize="@dimen/txt_size_32sp" />
+
+    <ImageView
+        android:id="@+id/image_warning_result_approved"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/warning_result"
+        android:layout_above="@+id/label_averaging_result"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_approved"
+        android:layout_alignParentStart="true"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/image_warning_result_disapproved"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/warning_result"
+        android:layout_above="@+id/label_averaging_result"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_disapproved"
+        android:layout_alignParentStart="true"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/label_averaging_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_label_averaging_result_fragment_resultado_media"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/txt_size_24sp"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/averaging_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_averaging_result"
+        android:layout_centerHorizontal="true"
+        android:text="@string/txt_averaging_result_fragment_resultado_media"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="@dimen/txt_size_32sp"
+        android:visibility="gone"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_resultado_media_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_back_to_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_back_to_home_fragment_resultado_media"
+        android:textAllCaps="true"
+        android:padding="@dimen/margin_16dp"
+        android:textSize="@dimen/txt_size_16sp"
+        android:visibility="gone"
+        android:textStyle="bold" />
+
+</RelativeLayout>

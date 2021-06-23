@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/margin_24dp"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="@string/txt_welcome_fragment_home"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_size_32sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="@string/txt_description_fragment_home"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/txt_size_16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_start_simulator"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.09"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/txt_size_16sp"
+        android:text="@string/btn_start_simulator_fragment_home"
+        android:drawableEnd="@drawable/ic_next"
+        android:textAllCaps="true" />
+
+
+</LinearLayout>

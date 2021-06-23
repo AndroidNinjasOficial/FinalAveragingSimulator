@@ -1,3 +1,35 @@
 <resources>
+    <!--  App Name  -->
     <string name="app_name">Meu Simulador</string>
+
+    <!--  Activity Title  -->
+    <string name="title_activity_formula_calc_webView">Entendendo o cálculo da média</string>
+
+    <!--  Fragment - Entrada de Notas  -->
+    <string name="hint_nota_1_fragment_entrada_notas">Nota 1</string>
+    <string name="hint_nota_2_fragment_entrada_notas">Nota 2</string>
+    <string name="hint_nota_3_fragment_entrada_notas">Nota 3</string>
+    <string name="hint_nota_4_fragment_entrada_notas">Nota 4</string>
+    <string name="btn_calculate_average_fragment_entrada_notas">Calcular Média</string>
+
+    <!--  Fragment - Home  -->
+    <string name="txt_welcome_fragment_home">Seja bem vindo!</string>
+    <string name="txt_description_fragment_home">Clique no botão abaixo para começar o simulador da sua média final</string>
+    <string name="btn_start_simulator_fragment_home">Iniciar</string>
+
+    <!--  Fragment - Resultado Media  -->
+    <string name="txt_approved_warning_result_fragment_resultado_media">APROVADO</string>
+    <string name="txt_disapproved_warning_result_fragment_resultado_media">REPROVADO</string>
+    <string name="txt_label_averaging_result_fragment_resultado_media">Sua média é:</string>
+    <string name="txt_averaging_result_fragment_resultado_media">%s</string>
+    <string name="btn_back_to_home_fragment_resultado_media">Voltar ao início</string>
+
+    <!--  Menu - Action WebView  -->
+    <string name="txt_action_menu">Como é feito o cálculo</string>
+
+    <!--  Random Messages Text  -->
+    <string name="txt_ok">Ok</string>
+    <string name="txt_max_grade_error">A nota máxima permitida é 10.</string>
+    <string name="txt_empty_grades_error">Preencha todas as notas.</string>
+
 </resources>

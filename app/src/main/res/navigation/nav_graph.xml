@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment android:id="@+id/HomeFragment"
+        android:name="com.androidninjas.finalaveragingsimulator.ui.fragment.HomeFragment"
+        android:label="Principal"
+        tools:layout="@layout/fragment_home" >
+
+        <action android:id="@+id/action_HomeFragment_toEntradaNotasFragment"
+            app:destination="@+id/EntradaNotasFragment"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/EntradaNotasFragment"
+        android:name="com.androidninjas.finalaveragingsimulator.ui.fragment.EntradaNotasFragment"
+        android:label="Entrada de Notas"
+        tools:layout="@layout/fragment_entrada_notas" >
+
+        <action android:id="@+id/action_EntradaNotasFragment_to_ResultadoMediaFragment"
+            app:destination="@+id/ResultadoMediaFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/ResultadoMediaFragment"
+        android:name="com.androidninjas.finalaveragingsimulator.ui.fragment.ResultadoMediaFragment"
+        android:label="Resultado da Média"
+        tools:layout="@layout/fragment_resultado_media" >
+
+        <action android:id="@+id/action_ResultadoMediaFragment_to_HomeFragment"
+            app:destination="@+id/HomeFragment" />
+    </fragment>
+
+</navigation>
