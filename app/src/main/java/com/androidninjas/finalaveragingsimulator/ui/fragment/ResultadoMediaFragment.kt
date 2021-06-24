@@ -20,12 +20,9 @@ import com.androidninjas.finalaveragingsimulator.util.GradeWeightEnum
 import com.androidninjas.finalaveragingsimulator.util.hide
 import com.androidninjas.finalaveragingsimulator.util.show
 
-
 class ResultadoMediaFragment : Fragment() {
-
     private var _binding: FragmentResultadoMediaBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var averagingResult: TextView
     private lateinit var progress: ProgressBar
     private lateinit var labelAveragingResult: TextView
@@ -33,7 +30,6 @@ class ResultadoMediaFragment : Fragment() {
     private lateinit var imageApprovedWarningResult: ImageView
     private lateinit var imageDisapprovedWarningResult: ImageView
     private lateinit var btnBackToHome: Button
-
     private val handler = Handler(Looper.getMainLooper())
     private var averagingCalc = 0.0
     private var grade1 = 0.0
@@ -47,33 +43,26 @@ class ResultadoMediaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentResultadoMediaBinding.inflate(inflater, container, false)
-
-
         arguments?.let {
             grade1 = it.getString("key1").toString().toDouble()
             grade2 = it.getString("key2").toString().toDouble()
             grade3 = it.getString("key3").toString().toDouble()
             grade4 = it.getString("key4").toString().toDouble()
         }
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initializeViews()
         setupDisplayAverageResult()
         onClickBackToHomeButton()
     }
 
     private fun setupDisplayAverageResult() {
-
         progress.show()
-
         handler.postDelayed({
             progress.hide()
-
             if (calculateAveraging() < AverageIdentifierEnum.MINIMUM_AVERAGE.value) {
                 showDisapprovedResultDetails()
             } else {
@@ -81,9 +70,7 @@ class ResultadoMediaFragment : Fragment() {
             }
             showAverageResult()
             btnBackToHome.visibility = View.VISIBLE
-
         }, 2000)
-
     }
 
     private fun showAverageResult() {

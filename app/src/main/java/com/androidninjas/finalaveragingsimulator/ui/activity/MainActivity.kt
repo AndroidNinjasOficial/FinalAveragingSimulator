@@ -14,22 +14,17 @@ import com.androidninjas.finalaveragingsimulator.databinding.ActivityMainBinding
 import com.androidninjas.finalaveragingsimulator.util.setupToolbar
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val navController by lazy { findNavController(R.id.nav_host_fragment) }
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setupToolbar(R.id.toolbar)
-
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -44,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-
         }
     }
 
