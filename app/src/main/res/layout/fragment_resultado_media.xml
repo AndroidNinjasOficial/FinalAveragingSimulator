@@ -77,12 +77,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:text="@string/btn_back_to_home_fragment_resultado_media"
         android:textAllCaps="true"
         android:padding="@dimen/margin_16dp"
         android:textSize="@dimen/txt_size_16sp"
+        android:layout_marginEnd="@dimen/margin_8dp"
         android:visibility="gone"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_save_simulator_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_save_simulator_result_fragment_resultado_media"
+        android:textStyle="bold|italic"
+        android:backgroundTint="@color/teal_200"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/btn_back_to_home"
+        android:padding="@dimen/margin_16dp"
+        android:textSize="@dimen/txt_size_16sp"
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/margin_8dp" />
 
 </RelativeLayout>

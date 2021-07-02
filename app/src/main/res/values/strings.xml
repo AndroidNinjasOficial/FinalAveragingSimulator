@@ -23,6 +23,7 @@
     <string name="txt_label_averaging_result_fragment_resultado_media">Sua média é:</string>
     <string name="txt_averaging_result_fragment_resultado_media">%s</string>
     <string name="btn_back_to_home_fragment_resultado_media">Voltar ao início</string>
+    <string name="btn_save_simulator_result_fragment_resultado_media">Salvar</string>
 
     <!--  Menu - Action WebView  -->
     <string name="txt_action_menu">Como é feito o cálculo</string>

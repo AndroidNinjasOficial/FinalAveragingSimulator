@@ -27,17 +27,35 @@
         android:textSize="@dimen/txt_size_16sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btn_start_simulator"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="0.09"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textSize="@dimen/txt_size_16sp"
-        android:text="@string/btn_start_simulator_fragment_home"
-        android:drawableEnd="@drawable/ic_next"
-        android:textAllCaps="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/btn_start_simulator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:textSize="@dimen/txt_size_16sp"
+            android:text="@string/btn_start_simulator_fragment_home"
+            android:drawableEnd="@drawable/ic_next"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/btn_show_last_saved_simulator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Salvo"
+            android:textStyle="bold"
+            android:drawableEnd="@drawable/ic_saved"
+            android:backgroundTint="@color/teal_200"
+            android:layout_marginStart="@dimen/margin_8dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

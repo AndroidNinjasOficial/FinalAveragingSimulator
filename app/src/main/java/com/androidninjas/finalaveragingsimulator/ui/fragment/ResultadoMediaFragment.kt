@@ -15,14 +15,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.androidninjas.finalaveragingsimulator.R
 import com.androidninjas.finalaveragingsimulator.databinding.FragmentResultadoMediaBinding
-import com.androidninjas.finalaveragingsimulator.util.AverageIdentifierEnum
-import com.androidninjas.finalaveragingsimulator.util.GradeWeightEnum
-import com.androidninjas.finalaveragingsimulator.util.hide
-import com.androidninjas.finalaveragingsimulator.util.show
+import com.androidninjas.finalaveragingsimulator.model.Simulator
+import com.androidninjas.finalaveragingsimulator.util.*
 
 class ResultadoMediaFragment : Fragment() {
     private var _binding: FragmentResultadoMediaBinding? = null
     private val binding get() = _binding!!
+    private var prefs = ModelPreferencesManager
     private lateinit var averagingResult: TextView
     private lateinit var progress: ProgressBar
     private lateinit var labelAveragingResult: TextView
@@ -30,6 +29,8 @@ class ResultadoMediaFragment : Fragment() {
     private lateinit var imageApprovedWarningResult: ImageView
     private lateinit var imageDisapprovedWarningResult: ImageView
     private lateinit var btnBackToHome: Button
+    private lateinit var btnSaveSimulator: Button
+    private var isApproved = false
     private val handler = Handler(Looper.getMainLooper())
     private var averagingCalc = 0.0
     private var grade1 = 0.0
@@ -56,7 +57,7 @@ class ResultadoMediaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initializeViews()
         setupDisplayAverageResult()
-        onClickBackToHomeButton()
+        setupOnButtonsClick()
     }
 
     private fun setupDisplayAverageResult() {
@@ -69,7 +70,6 @@ class ResultadoMediaFragment : Fragment() {
                 showApprovedResultDetails()
             }
             showAverageResult()
-            btnBackToHome.visibility = View.VISIBLE
         }, 2000)
     }
 
@@ -79,6 +79,8 @@ class ResultadoMediaFragment : Fragment() {
             calculateAveraging().toString()
         )
         labelAveragingResult.visibility = View.VISIBLE
+        btnBackToHome.visibility = View.VISIBLE
+        btnSaveSimulator.visibility = View.VISIBLE
     }
 
     private fun showApprovedResultDetails() {
@@ -92,6 +94,7 @@ class ResultadoMediaFragment : Fragment() {
             it.visibility = View.VISIBLE
         }
         imageApprovedWarningResult.visibility = View.VISIBLE
+        isApproved = true
     }
 
     private fun showDisapprovedResultDetails() {
@@ -105,6 +108,7 @@ class ResultadoMediaFragment : Fragment() {
             it.visibility = View.VISIBLE
         }
         imageDisapprovedWarningResult.visibility = View.VISIBLE
+        isApproved = false
     }
 
     private fun calculateAveraging(): Double {
@@ -115,9 +119,15 @@ class ResultadoMediaFragment : Fragment() {
         return averagingCalc
     }
 
-    private fun onClickBackToHomeButton() {
+    private fun setupOnButtonsClick() {
         btnBackToHome.setOnClickListener {
             findNavController().navigate(R.id.action_ResultadoMediaFragment_to_HomeFragment)
+        }
+
+        btnSaveSimulator.setOnClickListener {
+            prefs.insert(Simulator(grade1, grade2, grade3, grade4, calculateAveraging(), isApproved), "KEY_SIMULATOR")
+
+            findNavController().navigate(R.id.action_ResultadoMediaFragment_to_LastSavedSimulatorFragment)
         }
     }
 
@@ -129,6 +139,7 @@ class ResultadoMediaFragment : Fragment() {
         imageApprovedWarningResult = binding.imageWarningResultApproved
         imageDisapprovedWarningResult = binding.imageWarningResultDisapproved
         btnBackToHome = binding.btnBackToHome
+        btnSaveSimulator = binding.btnSaveSimulatorResult
     }
 
     override fun onDestroyView() {

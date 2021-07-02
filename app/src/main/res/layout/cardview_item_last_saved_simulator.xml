@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="@dimen/margin_8dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_24dp">
+
+        <TextView
+            android:id="@+id/warning_result_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic"
+            android:text="@string/txt_approved_warning_result_fragment_resultado_media"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/averaging_result_cardView" />
+
+        <ImageView
+            android:id="@+id/image_warning_result_disapproved_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_disapproved"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/averaging_result_cardView" />
+
+        <ImageView
+            android:id="@+id/image_warning_result_approved_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_approved"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/averaging_result_cardView" />
+
+        <TextView
+            android:id="@+id/averaging_result_cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_averaging_result_fragment_resultado_media"
+            android:textSize="@dimen/txt_size_32sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/label_grade1_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_nota_1_fragment_entrada_notas"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/grade1_cardview"
+            app:layout_constraintTop_toBottomOf="@+id/averaging_result_cardView"
+            app:layout_constraintStart_toStartOf="@+id/grade1_cardview" />
+
+        <TextView
+            android:id="@+id/label_grade2_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_nota_2_fragment_entrada_notas"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/grade1_cardview"
+            app:layout_constraintTop_toTopOf="@+id/label_grade1_cardview"
+            app:layout_constraintBottom_toBottomOf="@+id/label_grade1_cardview"
+            app:layout_constraintStart_toStartOf="@+id/grade2_cardview" />
+
+        <TextView
+            android:id="@+id/label_grade3_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_nota_3_fragment_entrada_notas"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/grade3_cardview"
+            app:layout_constraintTop_toTopOf="@+id/label_grade1_cardview"
+            app:layout_constraintBottom_toBottomOf="@+id/label_grade1_cardview"
+            app:layout_constraintStart_toStartOf="@+id/grade3_cardview" />
+
+        <TextView
+            android:id="@+id/label_grade4_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_nota_4_fragment_entrada_notas"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/grade4_cardview"
+            app:layout_constraintTop_toTopOf="@+id/label_grade1_cardview"
+            app:layout_constraintBottom_toBottomOf="@+id/label_grade1_cardview"
+            app:layout_constraintEnd_toEndOf="@+id/grade4_cardview"
+            />
+
+        <TextView
+            android:id="@+id/grade1_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_averaging_result_fragment_resultado_media"
+            android:textSize="@dimen/txt_size_16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/grade2_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_averaging_result_fragment_resultado_media"
+            android:textSize="@dimen/txt_size_16sp"
+            app:layout_constraintStart_toEndOf="@+id/grade1_cardview"
+            app:layout_constraintEnd_toStartOf="@+id/grade3_cardview"
+            app:layout_constraintBottom_toBottomOf="@+id/grade1_cardview" />
+
+        <TextView
+            android:id="@+id/grade3_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_averaging_result_fragment_resultado_media"
+            android:textSize="@dimen/txt_size_16sp"
+            app:layout_constraintStart_toEndOf="@+id/grade2_cardview"
+            app:layout_constraintEnd_toStartOf="@+id/grade4_cardview"
+            app:layout_constraintBottom_toBottomOf="@+id/grade1_cardview"
+             />
+
+        <TextView
+            android:id="@+id/grade4_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_averaging_result_fragment_resultado_media"
+            android:textSize="@dimen/txt_size_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/grade1_cardview"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

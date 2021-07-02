@@ -13,6 +13,9 @@
         <action android:id="@+id/action_HomeFragment_toEntradaNotasFragment"
             app:destination="@+id/EntradaNotasFragment"/>
 
+        <action android:id="@+id/action_HomeFragment_to_LastSavedSimulatorFragment"
+            app:destination="@+id/LastSavedSimulatorFragment" />
+
     </fragment>
 
     <fragment android:id="@+id/EntradaNotasFragment"
@@ -31,6 +34,14 @@
 
         <action android:id="@+id/action_ResultadoMediaFragment_to_HomeFragment"
             app:destination="@+id/HomeFragment" />
+
+        <action android:id="@+id/action_ResultadoMediaFragment_to_LastSavedSimulatorFragment"
+            app:destination="@+id/LastSavedSimulatorFragment" />
     </fragment>
+
+    <fragment android:id="@+id/LastSavedSimulatorFragment"
+        android:name="com.androidninjas.finalaveragingsimulator.ui.fragment.LastSavedSimulatorFragment"
+        android:label="Último Simulador Salvo"
+        tools:layout="@layout/fragment_last_saved_simulator" />
 
 </navigation>
