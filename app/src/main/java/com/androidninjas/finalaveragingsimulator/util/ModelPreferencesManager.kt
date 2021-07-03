@@ -3,6 +3,7 @@ package com.androidninjas.finalaveragingsimulator.util
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import android.security.keystore.KeyNotYetValidException
 import com.google.gson.GsonBuilder
 
 object ModelPreferencesManager {
@@ -19,6 +20,8 @@ object ModelPreferencesManager {
 
         preferences.edit().putString(key, jsonString).apply()
     }
+
+    fun remove(key: String) = preferences.edit().remove(key).apply()
 
     inline fun <reified T> get(key: String): T? {
 

@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androidninjas.finalaveragingsimulator.databinding.FragmentLastSavedSimulatorBinding
 import com.androidninjas.finalaveragingsimulator.model.Simulator
 import com.androidninjas.finalaveragingsimulator.ui.fragment.adapter.LastSavedSimulatorAdapter
 import com.androidninjas.finalaveragingsimulator.util.ModelPreferencesManager
+import com.androidninjas.finalaveragingsimulator.util.SwipeToDeleteCallback
 
 class LastSavedSimulatorFragment : Fragment(){
     private var _binding: FragmentLastSavedSimulatorBinding? = null
@@ -49,7 +51,23 @@ class LastSavedSimulatorFragment : Fragment(){
             it.setHasFixedSize(true)
             it.adapter = LastSavedSimulatorAdapter(savedList)
         }
+        setupSwipeToDeleteItem()
+    }
 
+    private fun setupSwipeToDeleteItem() {
+        val swipeHandler = object: SwipeToDeleteCallback(requireActivity()) {
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val adapter = recyclerView.adapter as LastSavedSimulatorAdapter
+                adapter.remoteAt(viewHolder.adapterPosition)
+            }
+
+
+
+        }
+
+       val itemTouchHelper = ItemTouchHelper(swipeHandler)
+        itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
     private fun initializeViews() {

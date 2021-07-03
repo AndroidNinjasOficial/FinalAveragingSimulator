@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androidninjas.finalaveragingsimulator.MainApplication
 import com.androidninjas.finalaveragingsimulator.R
 import com.androidninjas.finalaveragingsimulator.model.Simulator
+import com.androidninjas.finalaveragingsimulator.util.ModelPreferencesManager
 import kotlinx.android.synthetic.main.cardview_item_last_saved_simulator.view.*
 
 class LastSavedSimulatorAdapter(
-    val simulators: List<Simulator>
+    val simulators: MutableList<Simulator>
 ) : RecyclerView.Adapter<LastSavedSimulatorAdapter.LastSavedSimulatorViewHolder>() {
     private val appContext = MainApplication.getInstance().applicationContext
+    private val prefs = ModelPreferencesManager
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -54,6 +56,12 @@ class LastSavedSimulatorAdapter(
             }
         }
 
+    }
+
+    fun remoteAt(position: Int) {
+        simulators.removeAt(position)
+        notifyItemRemoved(position)
+        prefs.remove("KEY_SIMULATOR")
     }
 
     override fun getItemCount() = simulators.size
